@@ -3,6 +3,7 @@ class Library
   attr_accessor :books, :orders, :readers, :authors
   def initialize
     @books, @readers, @authors, @orders = [], [], [], []
+    load_db
   end
   
   Most = ->(hash) { hash.max_by{|k,v| v}.first }
