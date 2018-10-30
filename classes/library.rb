@@ -10,7 +10,7 @@ class Library
   def finder(arg = 'books')
     arr = []
     @orders.each {|x| arr << x.reader.name} if arg == 'readers'
-    @orders.each {|x| arr << x.book.title}
+    @orders.each {|x| arr << x.book.title} if arg == 'books'
     hash_items_count = arr.inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}
   end
 
