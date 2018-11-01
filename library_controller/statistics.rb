@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable LineLength
+
 module Statistics # :nodoc:
   def finder(num, klass = 'book')
     arr = []
@@ -9,7 +11,7 @@ module Statistics # :nodoc:
       uniq = @orders.uniq { |obj| [obj.book, obj.reader] }
       uniq.each { |obj| arr << obj.book.title }
     end
-    counted = arr.inject(Hash.new(0)) { |total, el| total[el] += 1; total }
+    counted = arr.each_with_object(Hash.new(0)) { |el, total| total[el] += 1; }
     sorted = counted.sort_by { |_, v| v }.reverse.first(num).to_h
     if klass == 'readers'
       sorted.each { |k, v| puts "#{k} read #{v > 1 ? v.to_s + ' books' : 'one book'}" }
@@ -27,7 +29,7 @@ module Statistics # :nodoc:
     puts "\nGreat mind#{num > 1 ? 's are' : ' is'}"
     finder(num, 'readers')
   end
-  
+
   def number_of_readers(num = 3)
     puts "\nUniq books are"
     finder(num, 'uniq')
@@ -53,3 +55,4 @@ module Statistics # :nodoc:
     end
   end
 end
+# rubocop:enable LineLength

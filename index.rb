@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable LineLength
+
 require './entities/library'
 require 'faker'
 
@@ -75,3 +77,5 @@ else
   system 'ruby data_base/fake_db.rb'
   system 'ruby index.rb'
 end
+
+# rubocop:enable LineLength

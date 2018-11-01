@@ -11,7 +11,10 @@ class Library # :nodoc:
   include Statistics
   attr_reader :books, :orders, :readers, :authors
   def initialize
-    @books, @readers, @authors, @orders = [], [], [], []
+    @books = []
+    @readers = []
+    @authors = []
+    @orders = []
     load_db
   end
 end

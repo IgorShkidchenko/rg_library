@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable LineLength
+
 File.truncate('./data_base/database.yaml', 0)
 
 require './entities/library'
@@ -38,3 +40,5 @@ orders_arr << Order.new(second_book, second_reader)
 
 orders_arr.each { |el| library.add_to_lib(el) }
 library.save_to_db
+
+# rubocop:enable LineLength

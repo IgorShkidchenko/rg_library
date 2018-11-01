@@ -6,6 +6,9 @@ class Order # :nodoc:
   attr_reader :book, :reader, :date
   def initialize(book, reader, date = Time.now)
     raise LibraryError unless (book.is_a? Book) && (reader.is_a? Reader)
-    @book, @reader, @date = book, reader, date
+
+    @book = book
+    @reader = reader
+    @date = date
   end
 end
