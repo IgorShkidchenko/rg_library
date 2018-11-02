@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/5d44ff3a89cb151dfa1d/maintainability)](https://codeclimate.com/github/IgorShkidchenko/rg_library/maintainability)
+
 ~$ ruby index.rb
 
 Technical specification
