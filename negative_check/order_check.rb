@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './entities/library'
+require './config/routes'
 
-puts "\nInvalid order"
+puts "\nInvalid order".red
 Order.new('str', 10)

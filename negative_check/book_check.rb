@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './entities/library'
+require './config/routes'
 
-puts "\nInvalid book"
+puts "\nInvalid book".red
 Book.new(' ', 2)

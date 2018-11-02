@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'error'
-
 class Order # :nodoc:
   attr_reader :book, :reader, :date
+  include Validator
   def initialize(book, reader, date = Time.now)
-    raise LibraryError unless (book.is_a? Book) && (reader.is_a? Reader)
-
+    check_class(book, Book)
+    check_class(reader, Reader)
+    check_class(date, Time)
     @book = book
     @reader = reader
     @date = date

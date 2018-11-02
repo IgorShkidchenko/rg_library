@@ -1,3 +1,5 @@
+~$ ruby index.rb
+
 Technical specification
     Task: Library
     Estimated lead time: 1 week
@@ -42,4 +44,3 @@ Code requirements:
     ntentations and “pretty” view of a code
     Project must have Pull Request on Git repository opened
     All branches/commits/modules/classes/methods/variables/files should be named correctly
-

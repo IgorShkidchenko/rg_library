@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+Style/Encoding:
+  Enabled: false
+  
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 125

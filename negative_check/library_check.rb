@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './entities/library'
+require './config/routes'
 
-puts "\nInvalid library"
+puts "\nInvalid library".red
 library = Library.new
-library.add_to_lib(1)
+library.add(1)

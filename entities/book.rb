@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
-require_relative 'error'
-
 class Book # :nodoc:
   attr_reader :title, :author
+  include Validator
   def initialize(title, author)
-    raise LibraryError unless (author.is_a? Author) && (title.is_a? String)
-    raise LibraryError, 'str' if title.empty?
-
+    check_class(author, Author)
+    check_class(title)
+    check_string(title)
     @title = title
     @author = author
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './entities/library'
+require './config/routes'
 
-puts "\nInvalid reader"
-Reader.new('', ' ', ' ', ' ', 1)
+puts "\nInvalid reader".red
+Reader.new(1, 2, 3, 4, 5, 6)
