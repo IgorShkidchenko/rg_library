@@ -19,9 +19,9 @@ module Errors # :nodoc:
     end
   end
 
-  class LibraryWrongClassError < StandardError # :nodoc:
-    def initialize(obj)
-      super("#{obj.class.to_s.red} #{'is incorrect, library accepts only Book, Author, Order, Reader classes!'.pink}")
+  class UndefinedLibraryEntity < StandardError # :nodoc:
+    def initialize(entity)
+      super("#{entity.class.to_s.red} #{'is incorrect, library accepts only Book, Author, Order, Reader classes!'.pink}")
     end
   end
 end

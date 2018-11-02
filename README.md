@@ -1,6 +1,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5d44ff3a89cb151dfa1d/maintainability)](https://codeclimate.com/github/IgorShkidchenko/rg_library/maintainability)
 
-~$ ruby index.rb
+~$ ruby index.rb for dry code
+~$ ruby start.rb for fancy console
 
 Technical specification
     Task: Library

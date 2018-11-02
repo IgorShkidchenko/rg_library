@@ -6,6 +6,7 @@ class Library # :nodoc:
   include NiceVision
   include Validator
   attr_reader :books, :orders, :readers, :authors
+  
   def initialize
     @books = []
     @readers = []
@@ -14,13 +15,13 @@ class Library # :nodoc:
     load_db
   end
 
-  def add(obj)
-    case obj
-    when Book then @books << obj
-    when Author then @authors << obj
-    when Reader then @readers << obj
-    when Order then @orders << obj
-    else raise LibraryWrongClassError, obj
+  def add(entity)
+    case entity
+    when Book then @books << entity
+    when Author then @authors << entity
+    when Reader then @readers << entity
+    when Order then @orders << entity
+    else raise UndefinedLibraryEntity, entity
     end
   end
 end

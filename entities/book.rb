@@ -3,6 +3,7 @@
 class Book # :nodoc:
   attr_reader :title, :author
   include Validator
+  
   def initialize(title, author)
     check_class(author, Author)
     check_class(title)
