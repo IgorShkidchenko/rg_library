@@ -5,10 +5,14 @@ class Author # :nodoc:
   include Validator
 
   def initialize(name, biography = '')
-    check_class(name)
-    check_class(biography)
-    check_string(name)
+    validate(name, biography)
     @name = name
     @biography = biography
+  end
+
+  def validate(name, biography)
+    check_class(name, String)
+    check_class(biography, String)
+    check_string(name)
   end
 end

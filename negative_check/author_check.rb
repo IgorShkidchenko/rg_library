@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './config/routes'
+require_relative '../index'
 
-puts "\nInvalid author".red
+puts "\nInvalid author"
 Author.new('')

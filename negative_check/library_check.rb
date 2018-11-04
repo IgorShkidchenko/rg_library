@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require './config/routes'
+require_relative '../index'
 
-puts "\nInvalid library".red
+puts "\nInvalid library"
 library = Library.new
 library.add(1)

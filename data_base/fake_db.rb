@@ -2,27 +2,27 @@
 
 # rubocop:disable LineLength
 
-require './config/routes'
+require_relative '../index'
 
 File.truncate(Uploader::PATH, 0)
 
 library = Library.new
 
 random_author = Author.new(Faker::Book.author)
-random_reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, Faker::Address.street_name, Faker::Number.between(1, 10))
+random_reader = Reader.new(name: Faker::GameOfThrones.character, email: Faker::Internet.email, city: Faker::GameOfThrones.city, street: Faker::Address.street_name, house: Faker::Number.between(1, 10))
 random_book = Book.new(Faker::Book.title, random_author)
 library.add(random_book)
 library.add(random_reader)
 library.add(random_author)
 
 first_book = Book.new(Faker::Book.title, Author.new(Faker::Book.author))
-first_reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, Faker::Address.street_name, Faker::Number.between(1, 10))
+first_reader = Reader.new(name: Faker::GameOfThrones.character, email: Faker::Internet.email, city: Faker::GameOfThrones.city, street: Faker::Address.street_name, house: Faker::Number.between(1, 10))
 second_book = Book.new(Faker::Book.title, Author.new(Faker::Book.author))
-second_reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, Faker::Address.street_name, Faker::Number.between(1, 10))
+second_reader = Reader.new(name: Faker::GameOfThrones.character, email: Faker::Internet.email, city: Faker::GameOfThrones.city, street: Faker::Address.street_name, house: Faker::Number.between(1, 10))
 third_book = Book.new(Faker::Book.title, Author.new(Faker::Book.author))
-third_reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, Faker::Address.street_name, Faker::Number.between(1, 10))
+third_reader = Reader.new(name: Faker::GameOfThrones.character, email: Faker::Internet.email, city: Faker::GameOfThrones.city, street: Faker::Address.street_name, house: Faker::Number.between(1, 10))
 fourth_book = Book.new(Faker::Book.title, Author.new(Faker::Book.author))
-fourth_reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, Faker::Address.street_name, Faker::Number.between(1, 10))
+fourth_reader = Reader.new(name: Faker::GameOfThrones.character, email: Faker::Internet.email, city: Faker::GameOfThrones.city, street: Faker::Address.street_name, house: Faker::Number.between(1, 10))
 
 orders_arr = []
 orders_arr << Order.new(first_book, second_reader)

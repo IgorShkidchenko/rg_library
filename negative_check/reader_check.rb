@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './config/routes'
+require_relative '../index'
 
-puts "\nInvalid reader".red
-Reader.new(1, 2, 3, 4, 5, 6)
+puts "\nInvalid reader"
+Reader.new(name: ' ', email: ' ', city: '', street: ' ', house: 5)

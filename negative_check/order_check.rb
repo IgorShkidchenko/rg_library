@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './config/routes'
+require_relative '../index'
 
-puts "\nInvalid order".red
+puts "\nInvalid order"
 Order.new('str', 10)

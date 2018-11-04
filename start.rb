@@ -1,6 +1,36 @@
 # frozen_string_literal: true
 
-require './config/routes'
+require 'faker'
+require 'yaml'
+require_relative './errors/errors'
+require_relative './controllers/validator/validator'
+require_relative './entities/book'
+require_relative './entities/author'
+require_relative './entities/order'
+require_relative './entities/reader'
+require_relative './controllers/library/statistics'
+require_relative './controllers/library/nice_vision'
+require_relative './controllers/data_base/uploader'
+require_relative './entities/library'
+require_relative './data_base/fake_db'
+
+String.class_eval do
+  def red
+    "\e[31m#{self}\e[0m"
+  end
+
+  def yellow
+    "\e[33m#{self}\e[0m"
+  end
+
+  def green
+    "\e[32m#{self}\e[0m"
+  end
+
+  def blue
+    "\e[36m#{self}\e[0m"
+  end
+end
 
 # Start
 library = Library.new
@@ -9,10 +39,15 @@ puts "\nAuthors: #{library.authors.inspect}\n\nOrders: #{library.orders.inspect}
 
 # Positive creation check
 author = Author.new(Faker::Book.author)
-num = Faker::Number.between(1, 10)
-street = Faker::Address.street_name
-reader = Reader.new(Faker::GameOfThrones.character, Faker::Internet.email, Faker::GameOfThrones.city, street, num)
 book = Book.new(Faker::Book.title, author)
+
+reader_house = Faker::Number.between(1, 10)
+reader_street = Faker::Address.street_name
+reader_name = Faker::GameOfThrones.character
+reader_email = Faker::Internet.email
+reader_city = Faker::GameOfThrones.city
+reader = Reader.new(name: reader_name, email: reader_email, city: reader_city, street: reader_street, house: reader_house)
+
 library.add(book)
 library.add(reader)
 library.add(author)
@@ -81,5 +116,5 @@ if choice_again.empty?
 else
   puts 'Creating new library...'.green
   system 'ruby data_base/fake_db.rb'
-  system 'ruby index.rb'
+  system 'ruby start.rb'
 end

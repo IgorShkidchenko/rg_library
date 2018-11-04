@@ -6,7 +6,7 @@ class Library # :nodoc:
   include NiceVision
   include Validator
   attr_reader :books, :orders, :readers, :authors
-  
+
   def initialize
     @books = []
     @readers = []
@@ -21,7 +21,7 @@ class Library # :nodoc:
     when Author then @authors << entity
     when Reader then @readers << entity
     when Order then @orders << entity
-    else raise UndefinedLibraryEntity, entity
+    else raise UndefinedLibraryEntity
     end
   end
 end
