@@ -3,7 +3,6 @@
 class Library # :nodoc:
   include Statistics
   include Uploader
-  include NiceVision
   include Validator
   attr_reader :books, :orders, :readers, :authors
 

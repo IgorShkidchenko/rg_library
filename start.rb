@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
+# rubocop:disable LineLength
+
 require 'faker'
 require 'yaml'
 require_relative './errors/errors'
 require_relative './controllers/validator/validator'
+require_relative './entities/entity_validate'
 require_relative './entities/book'
 require_relative './entities/author'
 require_relative './entities/order'
 require_relative './entities/reader'
-require_relative './controllers/library/statistics'
 require_relative './controllers/library/nice_vision'
+require_relative './controllers/library/statistics'
 require_relative './controllers/data_base/uploader'
 require_relative './entities/library'
 require_relative './data_base/fake_db'
@@ -37,26 +40,6 @@ library = Library.new
 puts "\n#{'All library'.green}\n\nBooks: #{library.books.inspect}\n\nReaders: #{library.readers.inspect}\n"
 puts "\nAuthors: #{library.authors.inspect}\n\nOrders: #{library.orders.inspect}\n"
 
-# Positive creation check
-author = Author.new(Faker::Book.author)
-book = Book.new(Faker::Book.title, author)
-
-reader_house = Faker::Number.between(1, 10)
-reader_street = Faker::Address.street_name
-reader_name = Faker::GameOfThrones.character
-reader_email = Faker::Internet.email
-reader_city = Faker::GameOfThrones.city
-reader = Reader.new(name: reader_name, email: reader_email, city: reader_city, street: reader_street, house: reader_house)
-
-library.add(book)
-library.add(reader)
-library.add(author)
-library.add(Order.new(book, reader))
-# Delete last creations for clear database, exept order
-library.books.pop
-library.readers.pop
-library.authors.pop
-
 puts "\nCheck all statistic methods".green
 puts "\nmost_popular_books if no argument -->".green
 library.most_popular_books
@@ -78,34 +61,23 @@ library.number_of_readers(7)
 library.show_number_of_readers(7)
 
 puts "\nCheck save_to_db".green
+author = Author.new(Faker::Book.author)
+library.add(author)
 library.save_to_db
-puts "\nCreate order \n#{library.orders.last.inspect},\nYou can find it in database.yaml".green
+puts "\nCreate order \n#{library.authors.last.inspect},\nYou can find it in database.yaml".green
 
-puts "\nDo you want to start negative creation check?\nEnter something to command line if YES or put 'Enter' if NO".yellow
-choice_negative = gets.chomp
-if choice_negative.empty?
-  puts 'You cancel negative creation check'.green
-else
-  puts "\n\n\n\nALERT! Negative creation check START\n\n\n\n".red
-  sleep(1)
-  system 'ruby ./negative_check/author_check.rb'
-  system 'ruby ./negative_check/book_check.rb'
-  system 'ruby ./negative_check/order_check.rb'
-  system 'ruby ./negative_check/reader_check.rb'
-  system 'ruby ./negative_check/library_check.rb'
-  puts "\n\n\n\nALERT! Negative creation check END\n\n\n\n".red
-end
-
-puts "\nDo you want to start Fasterer and Rubocop check?\nEnter something to command line if YES or put 'Enter' if NO".yellow
+puts "\nDo you want to start Fasterer, Rubocop, Rspec check?\nEnter something to command line if YES or put 'Enter' if NO".yellow
 choice_rubo_fast = gets.chomp
 if choice_rubo_fast.empty?
-  puts "\nYou cancel Fasterer and Rubocop check".green
+  puts "\nCancel".green
 else
-  puts "\nFasterer and Rubocop check...\n".green
+  puts "\nStart\n".green
   system 'rubocop'
-  puts "\nRubocop log\n\n".green
+  puts "\n Rubocop log\n\n".green
   system 'fasterer'
-  puts "\nFasterer log\n".green
+  puts "\n Fasterer log\n".green
+  system 'rspec .'
+  puts "\ Rspec log\n".green
 end
 
 puts "\nYou can auto-create new library and try again with new argumetns".yellow
@@ -118,3 +90,5 @@ else
   system 'ruby data_base/fake_db.rb'
   system 'ruby start.rb'
 end
+
+# rubocop:enable LineLength

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module Statistics # :nodoc:
+  include NiceVision
+
   Counter = ->(arr) { arr.each_with_object(Hash.new(0)) { |el, total| total[el] += 1; } }
   Sorterator = ->(hash, num) { hash.sort_by { |_, v| v }.reverse.first(num).to_h }
 
