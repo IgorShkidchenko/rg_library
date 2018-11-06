@@ -13,6 +13,6 @@ class Book # :nodoc:
   def validate(title, author)
     check_class(author, Author)
     check_class(title, String)
-    check_string(title)
+    check_for_emptiness(title)
   end
 end

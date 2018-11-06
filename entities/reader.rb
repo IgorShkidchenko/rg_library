@@ -5,8 +5,7 @@ class Reader # :nodoc:
   include Validator
 
   def initialize(name:, email:, city:, street:, house:)
-    name_params = [name, email, city, street, house]
-    validate(name_params.last, name_params.first(4))
+    validate(name, email, city, street, house)
     @name = name
     @email = email
     @city = city
@@ -15,8 +14,9 @@ class Reader # :nodoc:
   end
 
   def validate(house, only_strings)
+    only_strings = [name, email, city, street]
     only_strings.each { |str| check_class(str, String) }
-    only_strings.each { |str| check_string(str) }
+    only_strings.each { |str| check_for_emptiness(str) }
     check_class(house, Integer)
   end
 end

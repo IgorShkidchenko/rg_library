@@ -13,6 +13,6 @@ class Author # :nodoc:
   def validate(name, biography)
     check_class(name, String)
     check_class(biography, String)
-    check_string(name)
+    check_for_emptiness(name)
   end
 end
