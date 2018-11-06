@@ -1,12 +1,9 @@
 # frozen_string_literal: true
 
-# rubocop:disable LineLength
-
 require 'faker'
 require 'yaml'
 require_relative './errors/errors'
 require_relative './controllers/validator/validator'
-require_relative './entities/entity_validate'
 require_relative './entities/book'
 require_relative './entities/author'
 require_relative './entities/order'
@@ -90,5 +87,3 @@ else
   system 'ruby data_base/fake_db.rb'
   system 'ruby start.rb'
 end
-
-# rubocop:enable LineLength

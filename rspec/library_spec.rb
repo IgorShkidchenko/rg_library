@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable LineLength
-# rubocop:disable BlockLength
-
 require_relative '../index'
 
 RSpec.describe 'Library' do
@@ -15,7 +12,7 @@ RSpec.describe 'Library' do
   context 'Positive creation check' do
     it 'Positive creation off new Author' do
       expect(author.name).to eq('John')
-      expect(author.biography).to eq(' ')
+      expect(author.biography).to eq('')
     end
 
     it 'Positive creation off new Book' do
@@ -69,6 +66,3 @@ RSpec.describe 'Library' do
     expect { library.add(1) }.to raise_error('Library accepts only Book, Author, Order, Reader classes!')
   end
 end
-
-# rubocop:enable LineLength
-# rubocop:enable BlockLength

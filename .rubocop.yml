@@ -7,4 +7,7 @@ Metrics/AbcSize:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 125
+  Max: 140
+
+Metrics/BlockLength:
+  Max: 55

@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module Uploader # :nodoc:
-  PATH = './data_base/database.yaml'
+  PATH = './data_base/database.yaml'.freeze
+
   def save_to_db
     library_db = [@books, @authors, @readers, @orders]
     File.open(PATH, 'w') { |f| f.write library_db.to_yaml }
