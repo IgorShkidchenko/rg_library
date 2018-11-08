@@ -7,7 +7,7 @@ Metrics/AbcSize:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 140
+  Max: 120
 
 Metrics/BlockLength:
-  Max: 55
+  ExcludedMethods: ['describe']

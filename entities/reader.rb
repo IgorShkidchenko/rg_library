@@ -13,7 +13,7 @@ class Reader # :nodoc:
     @house = house
   end
 
-  def validate(house, only_strings)
+  def validate(name, email, city, street, house)
     only_strings = [name, email, city, street]
     only_strings.each { |str| check_class(str, String) }
     only_strings.each { |str| check_for_emptiness(str) }

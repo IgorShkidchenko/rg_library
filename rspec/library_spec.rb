@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../index'
+require_relative '../autoload'
 
 RSpec.describe 'Library' do
   let(:library) { Library.new }
@@ -47,7 +47,9 @@ RSpec.describe 'Library' do
     end
 
     it 'Negative creation off new Reader' do
-      expect { Reader.new(name: 'str', email: 'str', city: '', street: 'str', house: 1) }.to raise_error('You try to send empty string!')
+      expect do
+        Reader.new(name: 'str', email: 'str', city: '', street: 'str', house: 1)
+      end .to raise_error('You try to send empty string!')
       expect { Reader.new(name: 'str', email: 2, city: 'str', street: 'str', house: 1) }.to raise_error('Wrong class!')
     end
 
