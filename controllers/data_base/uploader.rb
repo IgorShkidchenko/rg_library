@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Uploader # :nodoc:
-  PATH_ROUTE = './data_base'
-  PATH_NAME = '/database'
+  PATH_ROUTE = './data_base/'
+  PATH_NAME = 'database'
   PATH_FORMAT = '.yaml'
   PATH = PATH_ROUTE + PATH_NAME + PATH_FORMAT
 

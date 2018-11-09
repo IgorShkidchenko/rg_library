@@ -38,10 +38,10 @@ puts "\ntop_reader if some arguments -->".green
 library.top_reader(library.orders, 7)
 library.show_top_reader(library.orders, 7)
 puts "\nnumber_of_readers if no argument -->".green
-library.number_of_readers(library.orders)
+library.number_of_readers_of_popular_books(library.orders)
 library.show_number_of_readers(library.orders)
 puts "\nnumber_of_readers if some arguments -->".green
-library.number_of_readers(library.orders, 7)
+library.number_of_readers_of_popular_books(library.orders, 7)
 library.show_number_of_readers(library.orders, 7)
 
 puts "\nCheck save_to_db".green

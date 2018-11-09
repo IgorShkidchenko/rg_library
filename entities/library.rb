@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Library # :nodoc:
+  attr_reader :books, :orders, :readers, :authors
   include Statistics
   include Uploader
-  include Validator
-  attr_reader :books, :orders, :readers, :authors
+  include Errors
 
   def initialize
     @books = []

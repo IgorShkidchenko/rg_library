@@ -14,9 +14,10 @@ class Reader # :nodoc:
   end
 
   def validate(name, email, city, street, house)
-    only_strings = [name, email, city, street]
-    only_strings.each { |str| check_class(str, String) }
-    only_strings.each { |str| check_for_emptiness(str) }
+    [name, email, city, street].each do |personal_data|
+      check_class(personal_data, String)
+      check_for_emptiness(personal_data)
+    end
     check_class(house, Integer)
   end
 end

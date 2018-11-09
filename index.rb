@@ -18,9 +18,8 @@ library.add(book)
 library.add(reader)
 library.add(author)
 library.add(Order.new(book, reader))
-
 library.most_popular_books(library.orders)
 library.top_reader(library.orders)
-library.number_of_readers(library.orders)
+library.number_of_readers_of_popular_books(library.orders)
 
 library.save_to_db(book: library.books, author: library.authors, reader: library.readers, order: library.orders)

@@ -2,6 +2,7 @@
 
 module Validator # :nodoc:
   include Errors
+
   def check_for_emptiness(str)
     raise EmptyStringError if str.empty?
   end
