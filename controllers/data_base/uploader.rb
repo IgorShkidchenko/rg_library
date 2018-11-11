@@ -11,9 +11,10 @@ module Uploader # :nodoc:
     File.open(PATH, 'w') { |f| f.write library_db.to_yaml }
   end
 
+  private
+
   def load_db
     list = [Book, Reader, Author, Order, Time]
-    base = YAML.safe_load(File.read(PATH), list, [], [], true)
-    base&.each { |inner| inner.each { |more| add(more) } }
+    YAML.safe_load(File.read(PATH), list, [], [], true).to_a
   end
 end

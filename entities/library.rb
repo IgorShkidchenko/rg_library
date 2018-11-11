@@ -11,7 +11,7 @@ class Library # :nodoc:
     @readers = []
     @authors = []
     @orders = []
-    load_db
+    load_db.flatten.each { |entity| add(entity) }
   end
 
   def add(entity)

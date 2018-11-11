@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module Statistics # :nodoc:
-  include NiceVision
-
   def most_popular_books(orders, num = 1)
     sorted = orders.group_by(&:book).sort_by { |_book, order| -order.count }.first(num)
     sorted.to_h.keys
