@@ -10,6 +10,8 @@ class Book # :nodoc:
     @author = author
   end
 
+  private
+
   def validate(title, author)
     check_class(author, Author)
     check_class(title, String)

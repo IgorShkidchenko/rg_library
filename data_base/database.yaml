@@ -1,109 +1,93 @@
 ---
 - - !ruby/object:Book
-    title: To Say Nothing of the Dog
+    title: Waiting for the Barbarians
     author: &1 !ruby/object:Author
-      name: Dr. Genie Abshire
-      biography: ''
-  - &8 !ruby/object:Book
-    title: Stranger in a Strange Land
-    author: &2 !ruby/object:Author
-      name: Mckenzie Rippin
+      name: Tai Nikolaus
       biography: ''
 - - *1
-  - *2
 - - !ruby/object:Reader
-    name: Ironbelly
-    email: annis@jast.com
-    city: Yunkai
-    street: Michale Meadow
-    house: 9
-  - &9 !ruby/object:Reader
-    name: Wynafryd Manderly
-    email: korysmith@cartwright.info
-    city: Astapor
-    street: Alissa Shores
-    house: 4
+    name: Alyn Frey
+    email: darcel@morar.io
+    city: Tyrosh
+    street: Josphine Street
+    house: 8
 - - !ruby/object:Order
-    book: &5 !ruby/object:Book
-      title: Blood's a Rover
+    book: &4 !ruby/object:Book
+      title: Some Buried Caesar
       author: !ruby/object:Author
-        name: Berta Tremblay
+        name: Yasmine Fadel
         biography: ''
-    reader: &4 !ruby/object:Reader
-      name: Canker Jeyne
-      email: enriqueledner@quitzon.com
-      city: Oldtown
-      street: Koepp Manors
-      house: 8
-    date: 2018-11-11 22:34:20.791910883 +02:00
+    reader: &3 !ruby/object:Reader
+      name: Cleon
+      email: jeramybuckridge@schillerlockman.org
+      city: Pentos
+      street: Herbert Radial
+      house: 4
+    date: 2018-11-15 19:09:14.591737537 +02:00
   - !ruby/object:Order
-    book: &3 !ruby/object:Book
-      title: Vile Bodies
+    book: &2 !ruby/object:Book
+      title: Vanity Fair
       author: !ruby/object:Author
-        name: Donnell Padberg
+        name: Vickey Bruen
         biography: ''
-    reader: &6 !ruby/object:Reader
-      name: Ronel Rivers
-      email: rico@feest.co
-      city: Gulltown
-      street: Hahn Passage
-      house: 2
-    date: 2018-11-11 22:34:20.791925487 +02:00
+    reader: &5 !ruby/object:Reader
+      name: Deana Hardyng
+      email: suebartell@aufderharheathcote.biz
+      city: Sar Meel
+      street: Blaine Street
+      house: 5
+    date: 2018-11-15 19:09:14.591749616 +02:00
   - !ruby/object:Order
-    book: *3
-    reader: *4
-    date: 2018-11-11 22:34:20.791931199 +02:00
+    book: *2
+    reader: *3
+    date: 2018-11-15 19:09:14.591755313 +02:00
   - !ruby/object:Order
-    book: *5
-    reader: *6
-    date: 2018-11-11 22:34:20.791935315 +02:00
+    book: *4
+    reader: *5
+    date: 2018-11-15 19:09:14.591759391 +02:00
   - !ruby/object:Order
-    book: &7 !ruby/object:Book
-      title: Mother Night
+    book: &6 !ruby/object:Book
+      title: Ah, Wilderness!
       author: !ruby/object:Author
-        name: Rosaline Hilpert Jr.
+        name: Donnie Hamill
         biography: ''
     reader: !ruby/object:Reader
-      name: Mebble
-      email: marcellondricka@hirthe.com
-      city: Chroyane
-      street: Mills Village
-      house: 8
-    date: 2018-11-11 22:34:20.791977267 +02:00
+      name: Jhaqo
+      email: bertflatley@gleasonmetz.io
+      city: Qarth
+      street: Cruickshank Brook
+      house: 2
+    date: 2018-11-15 19:09:14.591764081 +02:00
   - !ruby/object:Order
     book: !ruby/object:Book
-      title: Consider the Lilies
+      title: Eyeless in Gaza
       author: !ruby/object:Author
-        name: Indira Purdy PhD
+        name: Yolonda Trantow
         biography: ''
-    reader: *6
-    date: 2018-11-11 22:34:20.791982703 +02:00
+    reader: *5
+    date: 2018-11-15 19:09:14.591768183 +02:00
   - !ruby/object:Order
-    book: *5
+    book: *4
     reader: !ruby/object:Reader
-      name: Dorea Sand
-      email: jasper@hermanpadberg.net
-      city: Old Ghis
-      street: Watsica Ports
-      house: 8
-    date: 2018-11-11 22:34:20.791986819 +02:00
+      name: Gormon Tyrell
+      email: francoise@mcdermott.info
+      city: Bayasabhad
+      street: Bashirian Row
+      house: 10
+    date: 2018-11-15 19:09:14.591772021 +02:00
   - !ruby/object:Order
-    book: *7
-    reader: *4
-    date: 2018-11-11 22:34:20.791990755 +02:00
+    book: *6
+    reader: *3
+    date: 2018-11-15 19:09:14.591776015 +02:00
   - !ruby/object:Order
-    book: *3
-    reader: *4
-    date: 2018-11-11 22:34:20.791994715 +02:00
+    book: *2
+    reader: *3
+    date: 2018-11-15 19:09:14.591779889 +02:00
   - !ruby/object:Order
-    book: *3
-    reader: *4
-    date: 2018-11-11 22:34:20.791998483 +02:00
+    book: *2
+    reader: *3
+    date: 2018-11-15 19:09:14.591783919 +02:00
   - !ruby/object:Order
-    book: *3
-    reader: *4
-    date: 2018-11-11 22:34:20.792002275 +02:00
-  - !ruby/object:Order
-    book: *8
-    reader: *9
-    date: 2018-11-11 22:34:20.808888051 +02:00
+    book: *2
+    reader: *3
+    date: 2018-11-15 19:09:14.591787745 +02:00

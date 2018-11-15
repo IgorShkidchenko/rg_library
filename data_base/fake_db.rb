@@ -50,4 +50,4 @@ orders_arr << Order.new(second_book, second_reader)
 orders_arr << Order.new(second_book, second_reader)
 
 orders_arr.each { |el| library.add(el) }
-library.save_to_db(book: library.books, author: library.authors, reader: library.readers, order: library.orders)
+library.save_to_db(books: library.books, authors: library.authors, readers: library.readers, orders: library.orders)

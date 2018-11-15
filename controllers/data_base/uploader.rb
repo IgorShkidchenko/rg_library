@@ -6,8 +6,8 @@ module Uploader # :nodoc:
   PATH_FORMAT = '.yaml'
   PATH = PATH_ROUTE + PATH_NAME + PATH_FORMAT
 
-  def save_to_db(book:, author:, reader:, order:)
-    library_db = [book, author, reader, order]
+  def save_to_db(books:, authors:, readers:, orders:)
+    library_db = [books, authors, readers, orders]
     File.open(PATH, 'w') { |f| f.write library_db.to_yaml }
   end
 
