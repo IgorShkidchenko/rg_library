@@ -7,13 +7,13 @@ module Errors
     end
   end
 
-  class EmptyStringError < StandardError # :nodoc:
+  class EmptyStringError < StandardError
     def initialize
       super('You try to send empty string!')
     end
   end
 
-  class UndefinedLibraryEntity < StandardError # :nodoc:
+  class UndefinedLibraryEntity < StandardError
     def initialize
       super('Library accepts only Book, Author, Order, Reader classes!')
     end
