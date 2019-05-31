@@ -1,7 +1,7 @@
-# frozen_string_literal: true
 
-module Errors # :nodoc:
-  class WrongClassError < StandardError # :nodoc:
+
+module Errors
+  class WrongClassError < StandardError
     def initialize
       super('Wrong class!')
     end
