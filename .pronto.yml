@@ -1,7 +1,7 @@
 
 github:
   slug: 'IgorShkidchenko/rg_library'
-  access_token: eda67f3f87e5f4870fe9444cad9cddf35ed88fce
+  access_token: 
   api_endpoint: https://api.github.com/
   web_endpoint: https://github.com/
 max_warnings: 150
