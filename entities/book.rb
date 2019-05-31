@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Book # :nodoc:
+class Book
   attr_reader :title, :author
   include Validator
 
