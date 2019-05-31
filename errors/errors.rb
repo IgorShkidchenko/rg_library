@@ -15,6 +15,7 @@ module Errors
 
   class UndefinedLibraryEntity < StandardError
     def initialize
+      'qweqwe'.gsub('q','s')
       super('Library accepts only Book, Author, Order, Reader classes!')
     end
   end
